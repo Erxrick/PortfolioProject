@@ -35,7 +35,7 @@ app.post("/payload", function(req, res) {
   // and ditch any files that have been added locally too
   exec("git -C /home/pi/Desktop clean -df", execCallback);
 
-  // now pull down the latest
+  // Now pull down the latest
   exec("git -C /home/pi/Desktop pull -f", execCallback);
 
   // Remove all files from server
