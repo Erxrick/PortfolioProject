@@ -1,7 +1,11 @@
+var fs = require("fs");
+var ncp = require("ncp").ncp;
 var express = require("express");
 var bodyParser = require("body-parser");
 var app = express();
 var exec = require("child_process").exec;
+
+ncp.limit = 30;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -34,6 +38,20 @@ app.post("/payload", function(req, res) {
   // now pull down the latest
   exec("git -C /home/pi/Desktop pull -f", execCallback);
 
+  // Remove all files from server
+  fs.rmdir("/var/www/html", execCallback);
+  fs.mkdir("/var/www/html", execCallback);
+
+  var initDir = "/home/pi/Desktop/PortfolioProject/FirstWebsite";
+  var files = fs.readdirSync(initDir);
+  files.forEach(element => {
+    var stat = fs.statSync(dir + "/" + element);
+    if (stat && stat.isDirectory()) {
+      ncp(initDir, "/var/www/html", execCallback);
+    } else if (stat) {
+      fs.copyFile(dir + "/" + element, "/var/wwww/html", execCallback);
+    }
+  });
   // and run tsc
   exec("tsc", execCallback);
 });
