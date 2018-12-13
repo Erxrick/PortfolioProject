@@ -21,7 +21,7 @@ app.get("/payload", function(req, res) {
 });
 
 app.post("/payload", function(req, res) {
-  //verify that the payload is a push from the correct repo
+  //Verify that the payload is a push from the correct repo
 
   console.log(
     req.body.pusher.name + " just pushed to " + req.body.repository.name
