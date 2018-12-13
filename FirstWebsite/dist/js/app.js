@@ -32,7 +32,7 @@ app.post("/payload", function(req, res) {
   // reset any changes that have been made locally
   exec("git -C /home/pi/Desktop --hard", execCallback);
 
-  // and ditch any files that have been added locally too
+  // And ditch any files that have been added locally too
   exec("git -C /home/pi/Desktop clean -df", execCallback);
 
   // Now pull down the latest
