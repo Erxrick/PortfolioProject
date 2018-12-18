@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.htm");
+  res.sendFile(__dirname + "/index.html");
   console.log("get /");
 });
 
@@ -23,6 +23,7 @@ app.get("/payload", function(req, res) {
 app.post("/payload", function(req, res) {
   //Verify that the payload is a push from the correct repo
 
+
   console.log(
     req.body.pusher.name + " just pushed to " + req.body.repository.name
   );
@@ -30,13 +31,13 @@ app.post("/payload", function(req, res) {
   console.log("pulling code from GitHub...");
 
   // reset any changes that have been made locally
-  exec("git -C /home/pi/Desktop --hard", execCallback);
+  exec("git -C /home/pi/Desktop/PortfolioProject --hard", execCallback);
 
   // And ditch any files that have been added locally too
-  exec("git -C /home/pi/Desktop clean -df", execCallback);
+  exec("git -C /home/pi/DesktopPortfolioProject clean -df", execCallback);
 
   // Now pull down the latest
-  exec("git -C /home/pi/Desktop pull -f", execCallback);
+  exec("git -C /home/pi/DesktopPortfolioProject pull -f", execCallback);
 
   // Remove all files from server
   fs.rmdir("/var/www/html", execCallback);
