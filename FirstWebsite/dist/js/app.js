@@ -22,6 +22,11 @@ app.get("/payload", function(req, res) {
 
 app.post("/payload", function(req, res) {
   //Verify that the payload is a push from the correct repo
+  if(req.body.repository.name !== 'PortfolioProject')
+  {
+    res.sendStatus(200);
+    return;
+  }
 
   console.log(
     req.body.pusher.name + " just pushed to " + req.body.repository.name
