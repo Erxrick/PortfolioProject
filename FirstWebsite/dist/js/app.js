@@ -47,11 +47,11 @@ app.post("/payload", function(req, res) {
   var initDir = "/home/pi/Desktop/PortfolioProject/FirstWebsite";
   var files = fs.readdirSync(initDir);
   files.forEach(element => {
-    var stat = fs.statSync(dir + "/" + element);
+    var stat = fs.statSync(initDir + "/" + element);
     if (stat && stat.isDirectory()) {
       ncp(initDir, "/var/www/html", execCallback);
     } else if (stat) {
-      fs.copyFile(dir + "/" + element, "/var/wwww/html", execCallback);
+      fs.copyFile(initDir + "/" + element, "/var/wwww/html", execCallback);
     }
   });
   // and run tsc
