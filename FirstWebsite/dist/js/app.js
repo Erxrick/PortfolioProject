@@ -38,7 +38,7 @@ app.post("/payload", function(req, res) {
   //exec("git -C /home/pi/Desktop/PortfolioProject --hard", execCallback);
 
   // Now pull down the latest
-  exec("git -C /home/pi/DesktopPortfolioProject pull -f", execCallback);
+  exec("git -C /home/pi/Desktop/PortfolioProject pull -f", execCallback);
 
   // Remove all files from server
   fs.rmdir("/var/www/html", execCallback);
