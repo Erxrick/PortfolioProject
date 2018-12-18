@@ -35,7 +35,7 @@ app.post("/payload", function(req, res) {
   console.log("pulling code from GitHub...");
 
   // reset any changes that have been made locally
-  exec("git -C /home/pi/Desktop/PortfolioProject --hard", execCallback);
+  //exec("git -C /home/pi/Desktop/PortfolioProject --hard", execCallback);
 
   // Now pull down the latest
   exec("git -C /home/pi/DesktopPortfolioProject pull -f", execCallback);
