@@ -22,8 +22,7 @@ app.get("/payload", function(req, res) {
 
 app.post("/payload", function(req, res) {
   //Verify that the payload is a push from the correct repo
-  if(req.body.repository.name !== 'PortfolioProject')
-  {
+  if (req.body.repository.name !== "PortfolioProject") {
     res.sendStatus(200);
     return;
   }
@@ -38,24 +37,24 @@ app.post("/payload", function(req, res) {
   //exec("git -C /home/pi/Desktop/PortfolioProject --hard", execCallback);
 
   // Now pull down the latest
-  exec("git -C /home/pi/Desktop/PortfolioProject pull -f", execCallback);
+  exec("git -C /home/pi/Desktop/PortfolioProject pull -f", () => {
+    // Remove all files from server
+    fs.rmdir("/var/www/html", execCallback);
+    fs.mkdir("/var/www/html", execCallback);
 
-  // Remove all files from server
-  fs.rmdir("/var/www/html", execCallback);
-  fs.mkdir("/var/www/html", execCallback);
-
-  var initDir = "/home/pi/Desktop/PortfolioProject/FirstWebsite";
-  var files = fs.readdirSync(initDir);
-  files.forEach(element => {
-    var stat = fs.statSync(initDir + "/" + element);
-    if (stat && stat.isDirectory()) {
-      ncp(initDir, "/var/www/html", execCallback);
-    } else if (stat) {
-      fs.copyFile(initDir + "/" + element, "/var/wwww/html", execCallback);
-    }
+    var initDir = "/home/pi/Desktop/PortfolioProject/FirstWebsite";
+    var files = fs.readdirSync(initDir);
+    files.forEach(element => {
+      var stat = fs.statSync(initDir + "/" + element);
+      if (stat && stat.isDirectory()) {
+        ncp(initDir, "/var/www/html", execCallback);
+      } else if (stat) {
+        fs.copyFile(initDir + "/" + element, "/var/wwww/html", execCallback);
+      }
+    });
+    // and run tsc
+    exec("tsc", execCallback);
   });
-  // and run tsc
-  exec("tsc", execCallback);
 });
 
 app.listen(5000, function() {
