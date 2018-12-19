@@ -5,6 +5,9 @@
   top: 35px;
   cursor: pointer;
   transition: all 0.5s ease-out; }
+  .menu-btn:hover .btn-line {
+    background: #eece1a;
+    transition: all 0.5s ease-out; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
@@ -19,6 +22,29 @@
       opacity: 0; }
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
+
+.back-about-btn {
+  position: absolute;
+  display: flex;
+  z-index: 3;
+  left: 35px;
+  top: 35px;
+  cursor: pointer;
+  transition: all 0.5s ease-out; }
+  .back-about-btn .left-line {
+    width: 3px;
+    height: 24px;
+    margin: 1;
+    background: #fff; }
+  .back-about-btn .fas {
+    font-size: 24px;
+    margin: 1; }
+  .back-about-btn:hover .left-line {
+    background: #eece1a;
+    transition: all 0.5s ease-out; }
+  .back-about-btn:hover .fas {
+    color: #eece1a;
+    transition: all 0.5s ease-out; }
 
 .menu {
   position: fixed;
@@ -143,7 +169,7 @@ header {
   color: #eece1a; }
 
 main {
-  padding: 4rem;
+  padding: 3rem;
   min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
@@ -167,6 +193,8 @@ main {
     margin: auto;
     border-radius: 50%;
     border: #eece1a 3px solid; }
+  .about-info .noborder {
+    border: none; }
   .about-info .bio {
     grid-area: bio;
     font-size: 1.5rem; }
@@ -180,6 +208,15 @@ main {
     background: #404040;
     padding: 0.5rem;
     border-bottom: #eece1a 5px solid; }
+    .about-info .job:hover {
+      background: #eece1a;
+      color: #000;
+      border-bottom: #000 5px solid;
+      transition: all 0.5s ease-out; }
+      .about-info .job:hover h3 {
+        font-size: 2rem;
+        text-decoration: underline;
+        font-weight: bold; }
 
 .projects {
   display: grid;

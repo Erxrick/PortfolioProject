@@ -7,6 +7,12 @@
   cursor: pointer;
   @include easeOut;
 
+  &:hover {
+    .btn-line {
+      background: $secondary-color;
+      @include easeOut;
+    }
+  }
   .btn-line {
     width: 28px;
     height: 3px;
@@ -33,6 +39,36 @@
       &:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
       }
+    }
+  }
+}
+.back-about-btn {
+  position: absolute;
+  display: flex;
+  z-index: 3;
+  left: 35px;
+  top: 35px;
+  cursor: pointer;
+  @include easeOut;
+
+  .left-line {
+    width: 3px;
+    height: 24px;
+    margin: 1;
+    background: set-text-color($primary-color);
+  }
+  .fas {
+    font-size: 24px;
+    margin: 1;
+  }
+  &:hover {
+    .left-line {
+      background: $secondary-color;
+      @include easeOut;
+    }
+    .fas {
+      color: $secondary-color;
+      @include easeOut;
     }
   }
 }
