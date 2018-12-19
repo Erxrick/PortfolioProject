@@ -9,6 +9,7 @@
   "author": "Zachery Anderson",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.16.4",
     "node-sass": "^4.11.0"
   }
 }

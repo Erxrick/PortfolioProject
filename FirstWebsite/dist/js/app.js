@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.get("/", function(req, res) {
-  res.sendFile(__dirname + "/index.htm");
+  res.sendFile(__dirname + "/index.html");
   console.log("get /");
 });
 
@@ -22,6 +22,10 @@ app.get("/payload", function(req, res) {
 
 app.post("/payload", function(req, res) {
   //Verify that the payload is a push from the correct repo
+  if (req.body.repository.name !== "PortfolioProject") {
+    res.sendStatus(200);
+    return;
+  }
 
   console.log(
     req.body.pusher.name + " just pushed to " + req.body.repository.name
@@ -30,30 +34,27 @@ app.post("/payload", function(req, res) {
   console.log("pulling code from GitHub...");
 
   // reset any changes that have been made locally
-  exec("git -C /home/pi/Desktop --hard", execCallback);
-
-  // And ditch any files that have been added locally too
-  exec("git -C /home/pi/Desktop clean -df", execCallback);
+  //exec("git -C /home/pi/Desktop/PortfolioProject --hard", execCallback);
 
   // Now pull down the latest
-  exec("git -C /home/pi/Desktop pull -f", execCallback);
+  exec("git -C /home/pi/Desktop/PortfolioProject pull -f", () => {
+    // Remove all files from server
+    fs.rmdir("/var/www/html", execCallback);
+    fs.mkdir("/var/www/html", execCallback);
 
-  // Remove all files from server
-  fs.rmdir("/var/www/html", execCallback);
-  fs.mkdir("/var/www/html", execCallback);
-
-  var initDir = "/home/pi/Desktop/PortfolioProject/FirstWebsite";
-  var files = fs.readdirSync(initDir);
-  files.forEach(element => {
-    var stat = fs.statSync(dir + "/" + element);
-    if (stat && stat.isDirectory()) {
-      ncp(initDir, "/var/www/html", execCallback);
-    } else if (stat) {
-      fs.copyFile(dir + "/" + element, "/var/wwww/html", execCallback);
-    }
+    var initDir = "/home/pi/Desktop/PortfolioProject/FirstWebsite";
+    var files = fs.readdirSync(initDir);
+    files.forEach(element => {
+      var stat = fs.statSync(initDir + "/" + element);
+      if (stat && stat.isDirectory()) {
+        ncp(initDir, "/var/www/html", execCallback);
+      } else if (stat) {
+        fs.copyFile(initDir + "/" + element, "/var/wwww/html", execCallback);
+      }
+    });
+    // and run tsc
+    exec("tsc", execCallback);
   });
-  // and run tsc
-  exec("tsc", execCallback);
 });
 
 app.listen(5000, function() {
