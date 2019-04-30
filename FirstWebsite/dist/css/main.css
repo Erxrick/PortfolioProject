@@ -1,7 +1,7 @@
 .menu-btn {
   position: absolute;
   z-index: 3;
-  right: 35px;
+  right: 25px;
   top: 35px;
   cursor: pointer;
   transition: all 0.5s ease-out; }
@@ -27,7 +27,7 @@
   position: absolute;
   display: flex;
   z-index: 3;
-  left: 35px;
+  left: 25px;
   top: 35px;
   cursor: pointer;
   transition: all 0.5s ease-out; }
@@ -116,6 +116,9 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+.nav-item:nth-child(5) {
+  transition-delay: 0.5s; }
+
 * {
   box-sizing: border-box; }
 
@@ -169,7 +172,8 @@ header {
   color: #eece1a; }
 
 main {
-  padding: 3rem;
+  padding: 3.5rem;
+  padding-top: 1.5rem;
   min-height: calc(100vh - 60px); }
   main .icons {
     margin-top: 1rem; }
@@ -182,6 +186,29 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
+
+.random-info {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-areas: "info1 info2" "info3 info4";
+  grid-template-columns: repeat(2, 1fr); }
+  .random-info .info1,
+  .random-info .info2,
+  .random-info .info3,
+  .random-info .info4 {
+    margin: auto;
+    font-size: 0.75rem;
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem; }
+  .random-info .info1 {
+    grid-area: info1; }
+  .random-info .info2 {
+    grid-area: info2; }
+  .random-info .info3 {
+    grid-area: info3; }
+  .random-info .info4 {
+    grid-area: info4; }
 
 .about-info {
   display: grid;
@@ -197,7 +224,16 @@ main {
     border: none; }
   .about-info .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    background: rgba(56, 56, 56, 0.8);
+    padding: 1.5rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem; }
+    .about-info .bio .School {
+      text-decoration: underline; }
+      .about-info .bio .School:hover {
+        color: #eece1a;
+        transition: all 0.5s ease-out; }
   .about-info .job-1 {
     grid-area: job1; }
   .about-info .job-2 {
@@ -208,15 +244,26 @@ main {
     background: #404040;
     padding: 0.5rem;
     border-bottom: #eece1a 5px solid; }
+    .about-info .job h3 {
+      text-align: center; }
     .about-info .job:hover {
       background: #eece1a;
       color: #000;
       border-bottom: #000 5px solid;
       transition: all 0.5s ease-out; }
       .about-info .job:hover h3 {
-        font-size: 2rem;
-        text-decoration: underline;
-        font-weight: bold; }
+        text-decoration: underline; }
+
+.more-info {
+  grid-area: bio;
+  font-size: 1rem;
+  background: rgba(56, 56, 56, 0.8);
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem; }
+  .more-info .School:hover {
+    color: #eece1a;
+    transition: all 0.5s ease-out; }
 
 .projects {
   display: grid;
@@ -229,6 +276,38 @@ main {
       opacity: 0.5;
       border-color: #eece1a;
       transition: all 0.5s ease-out; }
+
+.project-info .bio-image {
+  border-radius: 50%;
+  border: #eece1a 3px solid; }
+
+.project-info .noborder {
+  border: none; }
+
+.project-info .bio {
+  font-size: 1.5rem;
+  background: rgba(56, 56, 56, 0.8);
+  padding: 1.5rem;
+  padding-bottom: 0.5rem;
+  padding-top: 0.5rem;
+  margin: 1rem; }
+
+.small-margin {
+  margin: 3px;
+  padding: 5px; }
+
+.small-size {
+  max-width: 40vw;
+  max-height: 40vh; }
+
+.large-size {
+  max-width: 85vw;
+  max-height: 85vh; }
+
+.img-center {
+  align-content: center;
+  margin: auto;
+  display: block; }
 
 .boxes {
   display: flex;

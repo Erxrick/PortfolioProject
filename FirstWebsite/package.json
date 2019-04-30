@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
+    "ncp": "^2.0.0",
     "node-sass": "^4.11.0"
   }
 }
