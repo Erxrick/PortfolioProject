@@ -2,301 +2,331 @@
 @import "menu";
 
 * {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body {
-	@include background;
-	background: $primary-color;
-	color: set-text-color($primary-color);
-	height: 100%;
-	margin: 0;
-	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-	line-height: 1.5;
+    @include background;
+    background: $primary-color;
+    color: set-text-color($primary-color);
+    height: 100%;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5;
 }
 
 // Headings
 h1,
 h2,
 h3 {
-	margin: 0;
-	font-weight: 400;
+    margin: 0;
+    font-weight: 400;
 
-	&.lg-heading {
-		font-size: 6rem;
-	}
-	&.sm-heading {
-		margin-bottom: 2rem;
-		padding: 0.2rem 1rem;
-		background: rgba(lighten($primary-color, 2), 0.5);
-	}
+    &.lg-heading {
+        font-size: 6rem;
+    }
+    &.sm-heading {
+        margin-bottom: 2rem;
+        padding: 0.2rem 1rem;
+        background: rgba(lighten($primary-color, 2), 0.5);
+    }
 }
 
 a {
-	color: #fff;
-	text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }
 
 header {
-	position: fixed;
-	z-index: 2;
-	width: 100%;
+    position: fixed;
+    z-index: 2;
+    width: 100%;
 }
 
 .text-secondary {
-	color: $secondary-color;
+    color: $secondary-color;
 }
 
 main {
-	padding: 3.5rem;
-	padding-top: 1.5rem;
-	//  height: 100%;
-	min-height: calc(100vh - 60px);
+    padding: 3.5rem;
+    padding-top: 1.5rem;
+    //  height: 100%;
+    min-height: calc(100vh - 60px);
 
-	.icons {
-		margin-top: 1rem;
+    .icons {
+        margin-top: 1rem;
 
-		a {
-			padding: 0.4rem;
+        a {
+            padding: 0.4rem;
 
-			&:hover {
-				color: $secondary-color;
-				@include easeOut();
-			}
-		}
-	}
+            &:hover {
+                color: $secondary-color;
+                @include easeOut();
+            }
+        }
+    }
 
-	&#home {
-		overflow: hidden;
-		h1 {
-			margin-top: 20vh;
-		}
-	}
+    &#home {
+        overflow: hidden;
+        h1 {
+            margin-top: 20vh;
+        }
+    }
 }
 
 .random-info {
-	display: grid;
-	grid-gap: 25px;
-	grid-template-areas:
-		"info1 info2"
-		"info3 info4";
-	grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-gap: 25px;
+    grid-template-areas:
+        "info1 info2"
+        "info3 info4";
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
 
-	.info1,
-	.info2,
-	.info3,
-	.info4 {
-		margin: auto;
-		font-size: 0.75rem;
-		padding: 1.5rem;
+    .no-bullets {
+        list-style-type: none;
+    }
+    h2 {
+        font-size: 1.25rem;
+        color: $secondary-color;
+    }
 
-		padding-bottom: 0.5rem;
-		padding-top: 0.5rem;
-	}
-	.info1 {
-		grid-area: info1;
-	}
-	.info2 {
-		grid-area: info2;
-	}
-	.info3 {
-		grid-area: info3;
-	}
-	.info4 {
-		grid-area: info4;
-	}
+    .info1,
+    .info2,
+    .info3,
+    .info4 {
+        margin: auto;
+        font-size: 1rem;
+        padding: 1.5rem;
+        background: rgba(lighten($primary-color, 2), 0.8);
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+    }
+    .info1 {
+        grid-area: info1;
+    }
+    .info2 {
+        grid-area: info2;
+    }
+    .info3 {
+        grid-area: info3;
+    }
+    .info4 {
+        grid-area: info4;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+}
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: left;
+    width: 33.33%;
+    padding: 5px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.hidden-text {
+    text-align: center;
+    margin: 2rem;
+    color: $primary-color;
 }
 
 .about-info {
-	display: grid;
-	grid-gap: 30px;
-	grid-template-areas:
-		"bioimage bio bio"
-		"job1 job2 job3";
-	grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-gap: 30px;
+    grid-template-areas:
+        "bioimage bio bio"
+        "job1 job2 job3";
+    grid-template-columns: repeat(3, 1fr);
 
-	.bio-image {
-		grid-area: bioimage;
-		margin: auto;
-		border-radius: 50%;
-		border: $secondary-color 3px solid;
-	}
-	.noborder {
-		border: none;
-	}
+    .bio-image {
+        grid-area: bioimage;
+        margin: auto;
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+    }
+    .noborder {
+        border: none;
+    }
 
-	.bio {
-		grid-area: bio;
-		font-size: 1.5rem;
-		background: rgba(lighten($primary-color, 2), 0.8);
-		padding: 1.5rem;
+    .bio {
+        grid-area: bio;
+        font-size: 1.5rem;
+        background: rgba(lighten($primary-color, 2), 0.8);
+        padding: 1.5rem;
 
-		padding-bottom: 0.5rem;
-		padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
 
-		.School {
-			text-decoration: underline;
-			&:hover {
-				color: $secondary-color;
-				@include easeOut;
-			}
-		}
-	}
-	.job-1 {
-		grid-area: job1;
-	}
-	.job-2 {
-		grid-area: job2;
-	}
-	.job-3 {
-		grid-area: job3;
-	}
+        .School {
+            text-decoration: underline;
+            &:hover {
+                color: $secondary-color;
+                @include easeOut;
+            }
+        }
+    }
+    .job-1 {
+        grid-area: job1;
+    }
+    .job-2 {
+        grid-area: job2;
+    }
+    .job-3 {
+        grid-area: job3;
+    }
 
-	.job {
-		background: lighten($primary-color, 5);
-		padding: 0.5rem;
-		border-bottom: $secondary-color 5px solid;
+    .job {
+        background: lighten($primary-color, 5);
+        padding: 0.5rem;
+        border-bottom: $secondary-color 5px solid;
 
-		h3 {
-			text-align: center;
-		}
-		&:hover {
-			background: $secondary-color;
-			color: set-text-color($secondary-color);
-			border-bottom: set-text-color($secondary-color) 5px solid;
-			@include easeOut;
-			h3 {
-				text-decoration: underline;
-			}
-		}
-	}
+        h3 {
+            text-align: center;
+        }
+        &:hover {
+            background: $secondary-color;
+            color: set-text-color($secondary-color);
+            border-bottom: set-text-color($secondary-color) 5px solid;
+            @include easeOut;
+            h3 {
+                text-decoration: underline;
+            }
+        }
+    }
 }
 
 .more-info {
-	grid-area: bio;
-	font-size: 1rem;
-	background: rgba(lighten($primary-color, 2), 0.8);
-	padding: 1.5rem;
+    font-size: 1rem;
+    background: rgba(lighten($primary-color, 2), 0.8);
+    padding: 1.5rem;
+    margin: auto;
+    text-align: center;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    display: inline-block;
 
-	padding-bottom: 0.5rem;
-	padding-top: 0.5rem;
-	.School {
-		&:hover {
-			color: $secondary-color;
-			@include easeOut;
-		}
-	}
+    .no-bullets {
+        list-style-type: none;
+    }
+    .School {
+        &:hover {
+            color: $secondary-color;
+            @include easeOut;
+        }
+    }
 }
 
 // Work/Projects
 .projects {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 0.7rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0.7rem;
 
-	img {
-		width: 100%;
-		border: 3px #fff solid;
+    img {
+        width: 100%;
+        border: 3px #fff solid;
 
-		&:hover {
-			opacity: 0.5;
-			border-color: $secondary-color;
-			@include easeOut;
-		}
-	}
+        &:hover {
+            opacity: 0.5;
+            border-color: $secondary-color;
+            @include easeOut;
+        }
+    }
 }
 
 .project-info {
-	.bio-image {
-		border-radius: 50%;
-		border: $secondary-color 3px solid;
-	}
-	.noborder {
-		border: none;
-	}
+    .bio-image {
+        border-radius: 50%;
+        border: $secondary-color 3px solid;
+    }
+    .noborder {
+        border: none;
+    }
 
-	.bio {
-		font-size: 1.5rem;
-		background: rgba(lighten($primary-color, 2), 0.8);
-		padding: 1.5rem;
-		padding-bottom: 0.5rem;
-		padding-top: 0.5rem;
-		margin: 1rem;
-	}
+    .bio {
+        font-size: 1.5rem;
+        background: rgba(lighten($primary-color, 2), 0.8);
+        padding: 1.5rem;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
+        margin: 1rem;
+    }
 }
 
 .small-margin {
-	margin: 3px;
-	padding: 5px;
+    margin: 3px;
+    padding: 5px;
 }
 .small-size {
-	max-width: 40vw;
-	max-height: 40vh;
+    max-width: 40vw;
+    max-height: 40vh;
 }
 .large-size {
-	max-width: 85vw;
-	max-height: 85vh;
+    max-width: 85vw;
+    max-height: 85vh;
 }
 .img-center {
-	align-content: center;
-	margin: auto;
-	display: block;
+    align-content: center;
+    margin: auto;
+    display: block;
 }
 
 //Contact Page
 .boxes {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-	align-items: center;
-	margin-top: 1rem;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 1rem;
 
-	div {
-		font-size: 2rem;
-		border: 3px #fff solid;
-		padding: 1.5rem 2.5rem;
-		margin-bottom: 3rem;
-		@include easeOut;
+    div {
+        font-size: 2rem;
 
-		&:hover {
-			padding: 0.5rem 1.5rem;
-			background: $secondary-color;
-			color: set-text-color($secondary-color);
-			span {
-				color: set-text-color($secondary-color);
-			}
-		}
-	}
+        margin-bottom: 3rem;
+        @include easeOut;
+
+        &:hover {
+            color: ($secondary-color);
+        }
+    }
 }
 
 // Button Styles
 .btn {
-	display: block;
-	padding: 0.5rem 1rem;
-	border: 0;
-	margin-bottom: 0.3rem;
-	&:hover {
-		background: $secondary-color;
-		color: set-text-color($secondary-color);
-	}
+    display: block;
+    padding: 0.5rem 1rem;
+    border: 0;
+    margin-bottom: 0.3rem;
+    &:hover {
+        background: $secondary-color;
+        color: set-text-color($secondary-color);
+    }
 }
 
 .btn-dark {
-	@extend .btn;
-	background: darken($primary-color, 50);
-	color: #fff;
+    @extend .btn;
+    background: darken($primary-color, 50);
+    color: #fff;
 }
 .btn-light {
-	@extend .btn;
-	background: lighten($primary-color, 60);
-	color: #333;
+    @extend .btn;
+    background: lighten($primary-color, 60);
+    color: #333;
 }
 
 #main-footer {
-	text-align: center;
-	padding: 1rem;
-	background: darken($primary-color, 10);
-	color: set-text-color($primary-color);
-	height: 60px;
+    text-align: center;
+    padding: 1rem;
+    background: darken($primary-color, 10);
+    color: set-text-color($primary-color);
+    height: 60px;
 }
 @import "mobile";

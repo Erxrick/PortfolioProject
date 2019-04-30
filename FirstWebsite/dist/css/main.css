@@ -191,14 +191,21 @@ main {
   display: grid;
   grid-gap: 25px;
   grid-template-areas: "info1 info2" "info3 info4";
-  grid-template-columns: repeat(2, 1fr); }
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center; }
+  .random-info .no-bullets {
+    list-style-type: none; }
+  .random-info h2 {
+    font-size: 1.25rem;
+    color: #eece1a; }
   .random-info .info1,
   .random-info .info2,
   .random-info .info3,
   .random-info .info4 {
     margin: auto;
-    font-size: 0.75rem;
+    font-size: 1rem;
     padding: 1.5rem;
+    background: rgba(56, 56, 56, 0.8);
     padding-bottom: 0.5rem;
     padding-top: 0.5rem; }
   .random-info .info1 {
@@ -209,6 +216,26 @@ main {
     grid-area: info3; }
   .random-info .info4 {
     grid-area: info4; }
+  .random-info ul {
+    padding: 0;
+    margin: 0; }
+
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 5px; }
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table; }
+
+.hidden-text {
+  text-align: center;
+  margin: 2rem;
+  color: #333; }
 
 .about-info {
   display: grid;
@@ -255,12 +282,16 @@ main {
         text-decoration: underline; }
 
 .more-info {
-  grid-area: bio;
   font-size: 1rem;
   background: rgba(56, 56, 56, 0.8);
   padding: 1.5rem;
+  margin: auto;
+  text-align: center;
   padding-bottom: 0.5rem;
-  padding-top: 0.5rem; }
+  padding-top: 0.5rem;
+  display: inline-block; }
+  .more-info .no-bullets {
+    list-style-type: none; }
   .more-info .School:hover {
     color: #eece1a;
     transition: all 0.5s ease-out; }
@@ -310,23 +341,15 @@ main {
   display: block; }
 
 .boxes {
-  display: flex;
-  flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
   margin-top: 1rem; }
   .boxes div {
     font-size: 2rem;
-    border: 3px #fff solid;
-    padding: 1.5rem 2.5rem;
     margin-bottom: 3rem;
     transition: all 0.5s ease-out; }
     .boxes div:hover {
-      padding: 0.5rem 1.5rem;
-      background: #eece1a;
-      color: #000; }
-      .boxes div:hover span {
-        color: #000; }
+      color: #eece1a; }
 
 .btn, .btn-dark, .btn-light {
   display: block;
