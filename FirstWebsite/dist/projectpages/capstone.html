@@ -1,62 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
-            integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h"
-            crossorigin="anonymous"
-        />
-        <link rel="stylesheet" href="../css/main.css" />
-        <title>Welcome to my Portfolio</title>
-    </head>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.6.0/css/all.css"
+			integrity="sha384-aOkxzJ5uQz7WBObEZcHvV5JvRW3TUc2rNPA7pe3AwnsUohiw1Vj2Rgx2KSOkF5+h"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="../css/main.css" />
+		<title>Capstone</title>
+	</head>
 
-    <body id="bg-img">
-        <header>
-            <div class="menu-btn">
-                <div class="btn-line"></div>
-                <div class="btn-line"></div>
-                <div class="btn-line"></div>
-            </div>
+	<body>
+		<header>
+			<div class="menu-btn">
+				<div class="btn-line"></div>
+				<div class="btn-line"></div>
+				<div class="btn-line"></div>
+			</div>
 
-            <nav class="menu">
-                <div class="menu-branding"><div class="portrait"></div></div>
-                <ul class="menu-nav">
-                    <li class="nav-item">
-                        <a href="../../index.html" class="nav-link"> Home </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../about.html" class="nav-link"> About Me </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="./work.html" class="nav-link"> My Work </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../contact.html" class="nav-link"> How To Reach Me </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../ZacheryAnderson_Resume.pdf" class="nav-link"> My Resume </a>
-                    </li>
-                </ul>
-            </nav>
-        </header>
+			<nav class="menu">
+				<div class="menu-branding">
+					<div class="portrait"></div>
+				</div>
+				<ul class="menu-nav">
+					<li class="nav-item">
+						<a href="../../index.html" class="nav-link"> Home </a>
+					</li>
+					<li class="nav-item">
+						<a href="../about.html" class="nav-link"> About Me </a>
+					</li>
+					<li class="nav-item">
+						<a href="../work.html" class="nav-link"> My Work </a>
+					</li>
+					<li class="nav-item">
+						<a href="../contact.html" class="nav-link"> How To Reach Me </a>
+					</li>
+					<li class="nav-item">
+						<a href="../ZacheryAnderson_Resume.pdf" class="nav-link"> My Resume </a>
+					</li>
+				</ul>
+			</nav>
+		</header>
 
-        <main id="home">
-            <h1 class="lg-heading">Zachery L. <span class="text-secondary">Anderson</span></h1>
-            <h2 class="sm-heading">This page has not been built yet</h2>
-            <div class="icons">
-                <a href="#!"> <i class="fab fa-twitter fa-2x"></i> </a>
-                <a href="https://www.linkedin.com/in/zachery-l-anderson/">
-                    <i class="fab fa-linkedin fa-2x"></i>
-                </a>
-                <a href="https://github.com/Erxrick">
-                    <i class="fab fa-github fa-2x"></i>
-                </a>
-            </div>
-        </main>
-        <script src="../js/main.js"></script>
-    </body>
+		<main id="about">
+			<div class="project-info">
+				<div class="pic img-center">
+					<h1 class="lg-heading" style="text-align: center">Capstone</h1>
+					<h1 style="text-align: center">Topographical Terrain Generator</h1>
+				</div>
+				<div class="bio">
+					<h2 class="text-secondary">Information</h2>
+					<p>
+						Capstones are the equivalant of a senior project at other colleges or universities. To quote Neumont, "Capstone Projects are a
+						senior project on steroids. These projects range from e-commerce solutions to social media encryption tools and are some of
+						the coolest innovations Neumont students have to offer. They start with an idea and software development know-how, then in
+						10-weeks they build something awesome enough to catapult them through to their final year."
+						<a href="https://www.neumont.edu/CPI.html" class="text-secondary">(source)</a>
+					</p>
+				</div>
+				<img src="../img/projects/capstone/capstone_main_OG.png" alt="Main Page of my Capstone" class="large-size img-center small-margin" />
+				<p style="text-align: center">
+					This is the main menu with a map loaded.
+				</p>
+				<div class="bio">
+					<p>
+						My objective with my capstone was to create a program that could read in a topographical map and generate a 3D model in C++
+						and <a class="link" href="https://www.qt.io/" target="_blank">Qt</a>. While not as polished as I would of liked to make it, I
+						was able to meet my objective. Below is an example of a map that I used and the model that was generated.
+					</p>
+				</div>
+				<div class="row">
+					<div class="column-half">
+						<img
+							src="../img/projects/capstone/example_map.jpg"
+							alt="Asci Art"
+							class="large-size img-center small-margin"
+							style="width:100%"
+						/>
+					</div>
+					<div class="column-half">
+						<a href="../Capstone_Example_Model.zip" target="_blank" download>
+							<img
+								src="../img/projects/capstone/example_model.png"
+								alt="Asci Art"
+								class="large-size img-center small-margin"
+								style="width:100%"
+							/>
+						</a>
+					</div>
+				</div>
+				<p style="text-align: center">
+					Click the model to download and properly view it.
+				</p>
+				<div class="bio">
+					<h3 class="text-secondary">Tech</h3>
+					<p>
+						When I started this project I wanted to use <a class="link" href="https://www.cgal.org/" target="_blank">CGAL</a>,
+						<a class="link" href="https://www.boost.org/" target="_blank">Boost</a>, and
+						<a class="link" href="http://eigen.tuxfamily.org/index.php?title=Main_Page" target="_blank">EIGEN3</a>. (The latter two were
+						dependencies of the Computational Geometry Algorithms Library.) I decided upon these after researching
+						<a class="link" href="https://en.wikipedia.org/wiki/Delaunay_triangulation" target="_blank">Delaunay Triangulation</a>
+						in 3-dimensional spaces which led me to the
+						<a class="link" href="https://doc.cgal.org/latest/Poisson_surface_reconstruction_3/index.html" target="_blank"
+							>Poission Reconstruction Algorithm</a
+						>. That algorithm is in CGAL and I thought it would be the best way to actually generate the model. Unfortunalty, I was unable
+						to get that specific algorithm working and resorted to using
+						<a class="link" href="http://www.meshlab.net/" target="_blank">Meshlab Server</a> to generate the model in order to reach the
+						deadline that was fast approaching.
+					</p>
+				</div>
+				<img
+					src="../img/projects/capstone/Capstone_Selection.png"
+					alt="Selection Screen of my Capstone"
+					class="large-size img-center small-margin"
+				/>
+				<p style="text-align: center">
+					This is the selection page with all of the lines already selected.
+				</p>
+				<div class="bio">
+					<p>
+						The approach I took was to use a custom
+						<a class="link" href="https://en.wikipedia.org/wiki/Flood_fill" target="_blank">flood fill algorithm</a> to detect the lines
+						and then used that data to generate XYZ coordinates. The next step was to allow users to adjust the height of individual lines
+						before generation. Once that is done, I generate a .XYZ file to pass into
+						<a class="link" href="http://www.meshlab.net/" target="_blank">Meshlab Server</a> that will finish the process and create the
+						3D model for me.
+					</p>
+				</div>
+			</div>
+		</main>
+		<footer id="main-footer">Copyright &copy; 2019</footer>
+		<script src="../js/main.js"></script>
+	</body>
 </html>
