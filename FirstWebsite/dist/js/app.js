@@ -52,6 +52,7 @@ app.post("/payload", function(req, res) {
 		});
 		// and run tsc
 		//what is this blasphemy
+		//why you no work
 		exec("tsc", execCallback);
 	});
 });
